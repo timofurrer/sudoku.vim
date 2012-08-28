@@ -1,8 +1,6 @@
 import vim
-import sys
 import os
 import time
-import copy
 
 class Sudokuer:
   FIELD_WIDTH  = 9
@@ -24,12 +22,10 @@ class Sudokuer:
     f = open( filename, "r" )
     self.playground = [[int( c ) for c in l[:9]] for l in f.readlines( )]
     f.close( )
-    self.orig_playground = copy.deepcopy( self.playground )
     return True
 
   def readList( self, list ):
     self.playground = [[int( c ) for c in l[:9]] for l in list]
-    self.orig_playground = copy.deepcopy( self.playground )
     return True
 
   def __solve( self, x, y ):
