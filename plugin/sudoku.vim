@@ -1,13 +1,11 @@
 " Sudoku: solve sudokus
 " Author: Timo Furrer <tuxtimo@gmail.com>
 " Link:   http://github.com/timofurrer
-"
 
 let s:scriptdir = expand("<sfile>:h") . "/"
+execute "pyfile ".s:scriptdir."sudoku.py"
 
 function! SolveSudoku(...)
-  execute "pyfile ".s:scriptdir."sudoku.py"
-
 python << EOF
 
 import vim
