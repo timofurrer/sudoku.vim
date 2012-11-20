@@ -2,6 +2,11 @@
 " Author: Timo Furrer <tuxtimo@gmail.com>
 " Link:   http://github.com/timofurrer
 
+if !has("python")
+  echo "Error: Required vim compiled with +python"
+  finish
+endif
+
 let s:scriptdir = expand("<sfile>:h") . "/"
 execute "pyfile ".s:scriptdir."sudoku.py"
 
